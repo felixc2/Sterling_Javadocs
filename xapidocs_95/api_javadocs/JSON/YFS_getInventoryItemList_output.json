@@ -1,0 +1,34 @@
+{
+  "InventoryItem": {
+    "InventoryItemKey": "",
+    "InventoryOrganizationCode": "",
+    "Item": {
+      "ItemID": "",
+      "ItemKey": "",
+      "LanguageDescriptionList": {
+        "LanguageDescription": [
+          {
+            "Description": "",
+            "ExtendedDescription": "",
+            "LocaleCode": "",
+            "ShortDescription": ""
+          }
+        ]
+      },
+      "OrganizationCode": "",
+      "PrimaryInformation": {
+        "Description": "",
+        "ShortDescription": ""
+      },
+      "UnitOfMeasure": ""
+    },
+    "ItemID": "",
+    "ProductClass": "",
+    "UnitOfMeasure": ""
+  },
+  "LastInventoryItemKey": "",
+  "LastRecordSet": "",
+  "OrganizationCode": "",
+  "TotalInventoryItemList": "",
+  "TotalNumberOfRecords": ""
+}

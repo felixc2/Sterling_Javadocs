@@ -1,0 +1,21 @@
+{
+  "AbsoluteAdjustmentOverride": "",
+  "AddAllItemsFromCatalog": "",
+  "Currency": "",
+  "Description": "",
+  "EndDateActive": "",
+  "InheritFromPricelistHeader": {
+    "PricelistName": ""
+  },
+  "InheritFromPricelistHeaderKey": "",
+  "MarkedForListPrice": "",
+  "Operation": "",
+  "OrganizationCode": "",
+  "PercentAdjustmentOverride": "",
+  "PricelistHeaderKey": "",
+  "PricelistName": "",
+  "PricingStatus": "",
+  "RefreshCache": "",
+  "SellerOrganizationCode": "",
+  "StartDateActive": ""
+}

@@ -1,0 +1,38 @@
+{
+  "OrganizationCode": "Required",
+  "PricelistLine": [
+    {
+      "AbsoluteAdjustment": "",
+      "EndDateActive": "",
+      "FromQuantity": "",
+      "ItemID": "",
+      "ListPrice": "",
+      "Operation": "",
+      "PercentAdjustment": "",
+      "PriceTypeName": "",
+      "PricelistHeader": {
+        "PricelistName": ""
+      },
+      "PricelistHeaderKey": "",
+      "PricelistLineKey": "",
+      "PricelistLineQuantityTierList": {
+        "PricelistLineQuantityTier": [
+          {
+            "AbsoluteAdjustment": "",
+            "FromQuantity": "",
+            "ListPrice": "",
+            "Operation": "",
+            "PercentAdjustment": "",
+            "PricelistLineKey": "",
+            "ToQuantity": ""
+          }
+        ],
+        "Reset": ""
+      },
+      "PricingStatus": "",
+      "StartDateActive": "",
+      "UnitOfMeasure": ""
+    }
+  ],
+  "ValidatePriceTypeAssociation": ""
+}

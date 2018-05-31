@@ -1,0 +1,27 @@
+{
+  "BuyerUserId": "",
+  "Currency": "Required",
+  "CustomerContactID": "",
+  "CustomerID": "",
+  "EnterpriseCode": "",
+  "IgnoreCombinationRules": "",
+  "IgnoreCustomerAssignments": "",
+  "IgnorePriceListQuantityTiers": "",
+  "IgnoreRuleQuantity": "",
+  "IgnoreSellerAssignments": "",
+  "LineItems": {
+    "LineItem": [
+      {
+        "ItemID": "Required",
+        "LineID": "",
+        "Quantity": "",
+        "UnitOfMeasure": ""
+      }
+    ]
+  },
+  "NumberOfDaysInPast": "",
+  "OrganizationCode": "Required",
+  "PricingDate": "",
+  "SellerOrganizationCode": "",
+  "SuppressRuleExecution": ""
+}

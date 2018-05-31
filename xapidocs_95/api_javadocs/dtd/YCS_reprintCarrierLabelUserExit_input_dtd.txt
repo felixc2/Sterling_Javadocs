@@ -1,0 +1,33 @@
+<!ELEMENT Container ( Shipment?,Load?,PrinterPreference?,ConnectionParameters? )>
+<!ATTLIST Container ContainerNo CDATA #IMPLIED>
+<!ATTLIST Container ContainerScm CDATA #IMPLIED>
+<!ATTLIST Container LoadKey CDATA #IMPLIED>
+<!ATTLIST Container NoOfCopies CDATA #IMPLIED>
+<!ATTLIST Container ShipmentContainerKey CDATA #IMPLIED>
+<!ATTLIST Container ShipmentKey CDATA #IMPLIED>
+
+<!ELEMENT Load EMPTY>
+<!ATTLIST Load LoadNo CDATA #IMPLIED>
+
+<!ELEMENT PrinterPreference EMPTY>
+<!ATTLIST PrinterPreference PrinterId CDATA #IMPLIED>
+<!ATTLIST PrinterPreference UserId CDATA #IMPLIED>
+<!ATTLIST PrinterPreference UsergroupId CDATA #IMPLIED>
+<!ATTLIST PrinterPreference WorkStationId CDATA #IMPLIED>
+
+<!ELEMENT ConnectionParameters ( PierbridgeParams? )>
+<!ATTLIST ConnectionParameters SellerOrganizationCode CDATA #IMPLIED>
+<!ATTLIST ConnectionParameters ShipNode CDATA #IMPLIED>
+
+<!ELEMENT Shipment EMPTY>
+<!ATTLIST Shipment SellerOrganizationCode CDATA #IMPLIED>
+<!ATTLIST Shipment ShipNode CDATA #IMPLIED>
+<!ATTLIST Shipment ShipmentNo CDATA #IMPLIED>
+
+<!ELEMENT PierbridgeParams EMPTY>
+<!ATTLIST PierbridgeParams PBDBPassword CDATA #IMPLIED>
+<!ATTLIST PierbridgeParams PBDBURL CDATA #IMPLIED>
+<!ATTLIST PierbridgeParams PBDBUserName CDATA #IMPLIED>
+<!ATTLIST PierbridgeParams PBDefaultRateRequestUser CDATA #IMPLIED>
+<!ATTLIST PierbridgeParams PBServerURL CDATA #IMPLIED>
+

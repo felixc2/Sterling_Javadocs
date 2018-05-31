@@ -1,0 +1,49 @@
+{
+  "AbsoluteAdjustmentOverride": "",
+  "ChildPricelistHeaderList": {
+    "ChildPricelistHeader": [
+      {
+        "AbsoluteAdjustmentOverride": "",
+        "Currency": "",
+        "Description": "",
+        "EndDateActive": "",
+        "InheritFromPricelistHeaderKey": "",
+        "MarkedForListPrice": "",
+        "OrganizationCode": "",
+        "PercentAdjustmentOverride": "",
+        "PricelistHeaderKey": "",
+        "PricelistName": "",
+        "PricingStatus": "",
+        "SellerOrganizationCode": "",
+        "StartDateActive": ""
+      }
+    ]
+  },
+  "Currency": "",
+  "Description": "",
+  "EndDateActive": "",
+  "InheritFromPricelistHeader": {
+    "AbsoluteAdjustmentOverride": "",
+    "Currency": "",
+    "Description": "",
+    "EndDateActive": "",
+    "InheritFromPricelistHeaderKey": "",
+    "MarkedForListPrice": "",
+    "OrganizationCode": "",
+    "PercentAdjustmentOverride": "",
+    "PricelistHeaderKey": "",
+    "PricelistName": "",
+    "PricingStatus": "",
+    "SellerOrganizationCode": "",
+    "StartDateActive": ""
+  },
+  "InheritFromPricelistHeaderKey": "",
+  "MarkedForListPrice": "",
+  "OrganizationCode": "",
+  "PercentAdjustmentOverride": "",
+  "PricelistHeaderKey": "",
+  "PricelistName": "",
+  "PricingStatus": "",
+  "SellerOrganizationCode": "",
+  "StartDateActive": ""
+}

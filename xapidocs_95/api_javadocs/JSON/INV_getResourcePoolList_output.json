@@ -1,0 +1,31 @@
+{
+  "ResourcePool": [
+    {
+      "AdditionalCapacityLimitList": {
+        "AdditionalCapacityLimit": [
+          {
+            "CapacityUnitOfMeasure": ""
+          }
+        ],
+        "TotalNumberOfRecords": ""
+      },
+      "AllRegionsServiced": "",
+      "AssociateRegionBySlot": "",
+      "CalendarKey": "",
+      "CapacityInfoAvailable": "",
+      "CapacityMaintainAtResourceLevel": "",
+      "CapacityOrganizationCode": "",
+      "CapacityUnitOfMeasure": "",
+      "ItemGroupCode": "",
+      "Node": "",
+      "ProviderContactAddressKey": "",
+      "ProviderOrganizationCode": "",
+      "ProvidesAllServices": "",
+      "Purpose": "",
+      "ResourcePoolDescription": "",
+      "ResourcePoolId": "",
+      "ResourcePoolKey": "",
+      "ServiceSupervisorId": ""
+    }
+  ]
+}

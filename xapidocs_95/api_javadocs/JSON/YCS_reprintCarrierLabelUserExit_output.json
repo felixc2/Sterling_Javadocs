@@ -1,0 +1,33 @@
+{
+  "ConnectionParameters": {
+    "PierbridgeParams": {
+      "PBDBPassword": "",
+      "PBDBURL": "",
+      "PBDBUserName": "",
+      "PBDefaultRateRequestUser": "",
+      "PBServerURL": ""
+    },
+    "SellerOrganizationCode": "",
+    "ShipNode": ""
+  },
+  "ContainerNo": "",
+  "ContainerScm": "",
+  "Load": {
+    "LoadNo": ""
+  },
+  "LoadKey": "",
+  "NoOfCopies": "",
+  "PrinterPreference": {
+    "PrinterId": "",
+    "UserId": "",
+    "UsergroupId": "",
+    "WorkStationId": ""
+  },
+  "Shipment": {
+    "SellerOrganizationCode": "",
+    "ShipNode": "",
+    "ShipmentNo": ""
+  },
+  "ShipmentContainerKey": "",
+  "ShipmentKey": ""
+}

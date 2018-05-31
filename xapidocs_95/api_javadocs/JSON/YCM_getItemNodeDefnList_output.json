@@ -1,0 +1,19 @@
+{
+  "ItemNodeDefn": [
+    {
+      "FutureSafetyFactorPercentage": "",
+      "ItemID": "",
+      "ItemNodeDefnKey": "",
+      "Node": "",
+      "OnhandSafetyFactorPercentage": "",
+      "OnhandSafetyFactorQuantity": "",
+      "OperationalConfigurationComplete": "",
+      "OrganizationCode": "",
+      "PickingType": "",
+      "ReceivingType": "",
+      "StorageType": "",
+      "UnitOfMeasure": "",
+      "VelocityCode": ""
+    }
+  ]
+}

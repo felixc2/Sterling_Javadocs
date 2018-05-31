@@ -1,0 +1,69 @@
+{
+  "Item": {
+    "Augment": {
+      "SupplyDetails": {
+        "Currency": "",
+        "ETA": "",
+        "FromETA": "",
+        "LotAttribute1": "",
+        "LotAttribute2": "",
+        "LotAttribute3": "",
+        "LotKeyReference": "",
+        "LotNumber": "",
+        "ManufacturingDate": "",
+        "Quantity": "",
+        "Segment": "",
+        "SegmentType": "",
+        "ShipByDate": "",
+        "SupplyReference": "",
+        "SupplyReferenceType": "",
+        "SupplyType": "",
+        "Tag": {
+          "BatchNo": "",
+          "LotAttribute1": "",
+          "LotAttribute2": "",
+          "LotAttribute3": "",
+          "LotKeyReference": "",
+          "LotNumber": "",
+          "ManufacturingDate": "",
+          "RevisionNo": ""
+        },
+        "UnitCost": ""
+      }
+    },
+    "ItemID": "Required",
+    "OrganizationCode": "",
+    "ProductClass": "",
+    "Remove": {
+      "SupplyDetails": {
+        "ETA": "",
+        "FromETA": "",
+        "LotAttribute1": "",
+        "LotAttribute2": "",
+        "LotAttribute3": "",
+        "LotKeyReference": "",
+        "LotNumber": "",
+        "Segment": "",
+        "SegmentType": "",
+        "ShipByDate": "",
+        "SupplyReference": "",
+        "SupplyReferenceType": "",
+        "SupplyType": "",
+        "Tag": {
+          "BatchNo": "",
+          "LotAttribute1": "",
+          "LotAttribute2": "",
+          "LotAttribute3": "",
+          "LotKeyReference": "",
+          "LotNumber": "",
+          "ManufacturingDate": "",
+          "RevisionNo": ""
+        },
+        "ToETA": ""
+      }
+    },
+    "UnitOfMeasure": ""
+  },
+  "RemoveAllPreviousInformation": "",
+  "ShipNode": "Required"
+}

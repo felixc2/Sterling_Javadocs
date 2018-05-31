@@ -1,0 +1,13 @@
+{
+  "PricelistLine": [
+    {
+      "EndDateActive": "",
+      "FromQuantity": "",
+      "ItemID": "",
+      "PricelistHeaderKey": "",
+      "PricelistLineKey": "",
+      "StartDateActive": "",
+      "UnitOfMeasure": ""
+    }
+  ]
+}

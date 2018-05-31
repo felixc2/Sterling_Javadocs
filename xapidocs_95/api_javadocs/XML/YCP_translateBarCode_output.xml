@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2005, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ -->
+<BarCode BarCodeData="Required" BarCodeType="Required">
+    <Translations BarCodeTranslationSource="" TotalNumberOfRecords="Required">
+        <Translation>
+            <ContextualInfo BuyerOrganizationCode="" EnterpriseCode=""
+                OrganizationCode="Required" SellerOrganizationCode=""/>
+            <ItemContextualInfo AlternateUOM="" ContainerQuantity=""
+                InventoryUOM="" ItemID="" KitCode="" ProductClass="" Quantity="">
+                <Inventory CountryOfOrigin="" FifoNo=""
+                    InventoryStatus="" Segment="" SegmentType="" ShipByDate="">
+                    <Receipt ReceiptNo=""/>
+                    <TagDetail BatchNo="" LotAttribute1=""
+                        LotAttribute2="" LotAttribute3=""
+                        LotKeyReference="" LotNumber=""
+                        ManufacturingDate="" RevisionNo="">
+                        <Extn/>
+                    </TagDetail>
+                    <SerialDetail SecondarySerial1=""
+                        SecondarySerial2="" SecondarySerial3=""
+                        SecondarySerial4="" SecondarySerial5=""
+                        SecondarySerial6="" SecondarySerial7=""
+                        SecondarySerial8="" SecondarySerial9="" SerialNo=""/>
+                </Inventory>
+            </ItemContextualInfo>
+            <ShipmentContextualInfo IsProductPlacingComplete=""
+                SellerOrganizationCode="" ShipNode="" ShipmentKey=""
+                ShipmentLineKey="" ShipmentNo=""/>
+            <OrderContextualInfo DocumentType="" OrderHeaderKey=""
+                OrderLineKey="" OrderNo=""/>
+            <WorkOrderContextualInfo EligibleActivityCode="" NodeKey=""
+                WorkOrderKey="" WorkOrderNo=""/>
+            <BatchContextualInfo BatchKey="" BatchNo="" TaskType=""/>
+            <ActivityContextualInfo ActivityCode="" ActivityGroupId=""/>
+            <ContainerContextualInfo CaseId="" ContainerNo=""
+                IsOutboundContainer="" LoadKey="" PalletId=""
+                ShipmentContainerKey="" ShipmentKey="" TrackingNo=""/>
+            <LocationContextualInfo LocationId="" ZoneId=""/>
+            <ToteContextualInfo IsToteInducted="" Node=""
+                ReferenceKey="" ReferenceName="" ReferenceValue="" ToteId=""/>
+            <EquipmentContextualInfo EquipmentId="" HasOpenTasks=""
+                IsMultiLocation="" Node=""/>
+            <ZoneContextualInfo LocationId="" Node="" ZoneId=""/>
+        </Translation>
+    </Translations>
+</BarCode>

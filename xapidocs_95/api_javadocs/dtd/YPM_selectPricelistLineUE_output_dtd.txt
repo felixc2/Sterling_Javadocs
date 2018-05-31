@@ -1,0 +1,15 @@
+<!ELEMENT PricelistLineList ( PricelistLine* )>
+
+<!ELEMENT PricelistLine EMPTY>
+<!ATTLIST PricelistLine EndDateActive CDATA #IMPLIED>
+<!ATTLIST PricelistLine FromQuantity CDATA #IMPLIED>
+<!ATTLIST PricelistLine ItemID CDATA #IMPLIED>
+<!ATTLIST PricelistLine PricelistHeaderKey CDATA #IMPLIED>
+<!ATTLIST PricelistLine PricelistLineKey CDATA #IMPLIED>
+<!ATTLIST PricelistLine StartDateActive CDATA #IMPLIED>
+<!ATTLIST PricelistLine UnitOfMeasure CDATA #IMPLIED>
+<!ATTLIST PricelistLine a-dtype NMTOKENS
+                               "EndDateActive dateTime
+                                FromQuantity decimal
+                                StartDateActive dateTime">
+

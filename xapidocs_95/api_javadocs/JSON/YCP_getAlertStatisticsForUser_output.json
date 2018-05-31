@@ -1,0 +1,37 @@
+{
+  "Queue": {
+    "AuditThisQueue": "",
+    "HoursAssignExceedAction": "",
+    "HoursForAssignRealert": "",
+    "HoursForAssignment": "",
+    "HoursForExceedRealert": "",
+    "HoursForResolution": "",
+    "HoursForResolveRealert": "",
+    "HoursResolveExceedAction": "",
+    "LastQueueExceedAlert": "",
+    "MaximumActiveSize": "",
+    "MaximumSizeExceedAction": "",
+    "NumberOfAlerts": "",
+    "NumberOfAlertsAssigned": "",
+    "OwnerKey": "",
+    "OwnerType": "",
+    "Priority": "",
+    "QKeyForAssignAlert": "",
+    "QKeyForExceedAlert": "",
+    "QKeyForResolveAlert": "",
+    "QueueDescription": "",
+    "QueueGroup": "",
+    "QueueId": "",
+    "QueueKey": "",
+    "QueueName": ""
+  },
+  "UserAlertInfoList": {
+    "AlertInfo": {
+      "ExceptionType": "",
+      "NumberOfAlerts": "",
+      "NumberOfAlertsAssigned": "",
+      "NumberOfHighAlerts": ""
+    }
+  },
+  "UserId": ""
+}

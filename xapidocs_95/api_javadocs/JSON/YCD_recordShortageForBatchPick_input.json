@@ -1,0 +1,13 @@
+{
+  "BatchNo": "",
+  "Item": {
+    "ItemID": "",
+    "ItemKey": "Required",
+    "OrganizationCode": "",
+    "ProductClass": "",
+    "ShortageReason": "Required",
+    "UnitOfMeasure": ""
+  },
+  "OrganizationCode": "",
+  "StoreBatchKey": "Required"
+}

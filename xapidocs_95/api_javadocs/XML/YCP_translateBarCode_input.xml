@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BarCode BarCodeData="Required" BarCodeType="Required">
+    <ItemContextualInfo AlternateUOM="" InventoryUOM="" ItemID=""
+        KitCode="" ProductClass="" Quantity="">
+        <Inventory CountryOfOrigin="" FifoNo="" InventoryStatus=""
+            Segment="" SegmentType="" ShipByDate="">
+            <TagDetail BatchNo="" LotAttribute1="" LotAttribute2=""
+                LotAttribute3="" LotKeyReference="" LotNumber=""
+                ManufacturingDate="" RevisionNo=""/>
+            <SerialDetail SecondarySerial1="" SecondarySerial2=""
+                SecondarySerial3="" SecondarySerial4=""
+                SecondarySerial5="" SecondarySerial6=""
+                SecondarySerial7="" SecondarySerial8=""
+                SecondarySerial9="" SerialNo=""/>
+            <Receipt ReceiptNo=""/>
+        </Inventory>
+    </ItemContextualInfo>
+    <ContextualInfo BuyerOrganizationCode="" EnterpriseCode=""
+        OrganizationCode="Required" SellerOrganizationCode=""/>
+    <ShipmentContextualInfo SellerOrganizationCode="" ShipNode=""
+        ShipmentKey="" ShipmentLineKey="" ShipmentNo=""/>
+    <OrderContextualInfo DocumentType="" OrderHeaderKey=""
+        OrderLineKey="" OrderNo=""/>
+    <BatchContextualInfo BatchKey="" BatchNo="" TaskType="">
+        <BatchLocation CartLocationId=""/>
+    </BatchContextualInfo>
+    <ContainerContextualInfo CaseId="" PalletId="">
+        <ContainerLocation LocationId=""/>
+    </ContainerContextualInfo>
+    <LocationContextualInfo LocationId="" StationId=""/>
+    <ToteContextualInfo Node="" ToteId=""/>
+    <EquipmentContextualInfo EquipmentId="" Node=""/>
+    <ZoneContextualInfo Node="" ToteId="" ZoneId=""/>
+</BarCode>

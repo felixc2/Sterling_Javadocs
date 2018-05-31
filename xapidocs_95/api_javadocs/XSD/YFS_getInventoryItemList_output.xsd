@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.sterlingcommerce.com/documentation/YFS/getInventoryItemList/output"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:yfc="http://www.sterlingcommerce.com/documentation/YFS/getInventoryItemList/output" xmlns:yfctype="http://www.sterlingcommerce.com/documentation/types">
+    <xsd:annotation yfc:fileName="YFS_getInventoryItemList_output.xsd" yfc:rootElement="InventoryList">
+        <xsd:appinfo source="yfc:structure">
+            <InventoryList hasAttributes="Y">
+                <InventoryItem hasAttributes="Y">
+                    <Item hasAttributes="Y">
+                        <PrimaryInformation hasAttributes="Y"/>
+                        <LanguageDescriptionList>
+                            <LanguageDescription hasAttributes="Y"/>
+                        </LanguageDescriptionList>
+                    </Item>
+                </InventoryItem>
+            </InventoryList>
+        </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:import
+        namespace="http://www.sterlingcommerce.com/documentation/types" schemaLocation="datatypes.xsd"/>
+    <xsd:element name="InventoryList" type="yfc:InventoryListXSDType"/>
+    <xsd:complexType name="InventoryListXSDType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" ref="yfc:InventoryItem"/>
+        </xsd:sequence>
+        <xsd:attribute name="LastInventoryItemKey" type="yfctype:Key" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>Last Inventory Item Key in the output.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="LastRecordSet" type="yfctype:Flag" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>This flag indicates whether the records obtained are a complete list.  For example, if there are more than 500 records matching the criteria passed in input xml, only 500 records are returned and this flag is set to N.
+				<br/>Valid Values: Y or N
+			</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="OrganizationCode" type="yfctype:OrgCode" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>Identifies the organization. Value is same as the passed in input.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="TotalInventoryItemList"
+            type="yfctype:Count" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>Total number of inventory items returned.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="TotalNumberOfRecords" type="yfctype:Count" use="optional">
+            <xsd:annotation>
+                <xsd:documentation>number of records that match the input criteria.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+    <xsd:element name="InventoryItem">
+        <xsd:annotation yfc:tableName="YFS_INVENTORY_ITEM">
+            <xsd:documentation>This table stores definitions for all inventory items.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="yfc:Item"/>
+            </xsd:sequence>
+            <xsd:attribute name="InventoryItemKey" type="yfctype:Key" use="optional">
+                <xsd:annotation yfc:columnName="INVENTORY_ITEM_KEY" yfc:tableName="YFS_INVENTORY_ITEM">
+                    <xsd:documentation>The primary key for the YFS_INVENTORY_ITEM table.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="InventoryOrganizationCode"
+                type="yfctype:OrgCode" use="optional">
+                <xsd:annotation yfc:columnName="ORGANIZATION_CODE" yfc:tableName="YFS_INVENTORY_ITEM">
+                    <xsd:documentation>The code of the organization associated with this inventory item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ItemID" type="yfctype:ItemID" use="optional">
+                <xsd:annotation yfc:columnName="ITEM_ID" yfc:tableName="YFS_INVENTORY_ITEM">
+                    <xsd:documentation>The identifer for this inventory item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ProductClass"
+                type="yfctype:ProductClass" use="optional">
+                <xsd:annotation yfc:columnName="PRODUCT_CLASS" yfc:tableName="YFS_INVENTORY_ITEM">
+                    <xsd:documentation>The product class for this inventory item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="UnitOfMeasure" type="yfctype:UOM" use="optional">
+                <xsd:annotation yfc:columnName="UOM" yfc:tableName="YFS_INVENTORY_ITEM">
+                    <xsd:documentation>The unit of measure for this inventory item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Item">
+        <xsd:annotation yfc:tableName="YFS_ITEM">
+            <xsd:documentation>Catalog item information is returned only if there is an entry in the system catalog with a matching ItemID and UnitOfMeasure for the InventoryItem.  If inventory is stored in an alternate UOM from that specified in the catalog, Item information may not be retrieved.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:PrimaryInformation"/>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:LanguageDescriptionList"/>
+            </xsd:all>
+            <xsd:attribute name="ItemID" type="yfctype:ItemID" use="optional">
+                <xsd:annotation yfc:columnName="ITEM_ID" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The unique identifier for the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ItemKey" type="yfctype:Key" use="optional">
+                <xsd:annotation yfc:columnName="ITEM_KEY" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The primary key for the YFS_ITEM table.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="OrganizationCode"
+                type="yfctype:OrgCode" use="optional">
+                <xsd:annotation yfc:columnName="ORGANIZATION_CODE" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The organization code whose product information is being stored.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="UnitOfMeasure" type="yfctype:UOM" use="optional">
+                <xsd:annotation yfc:columnName="UOM" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The unit of measure for item quantity.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="PrimaryInformation">
+        <xsd:annotation yfc:tableName="YFS_ITEM">
+            <xsd:documentation>The table stores product information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attribute name="Description" type="yfctype:Text-500" use="optional">
+                <xsd:annotation yfc:columnName="DESCRIPTION" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The description of the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ShortDescription"
+                type="yfctype:Text-200" use="optional">
+                <xsd:annotation yfc:columnName="SHORT_DESCRIPTION" yfc:tableName="YFS_ITEM">
+                    <xsd:documentation>The short description of the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="LanguageDescriptionList">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="yfc:LanguageDescription"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="LanguageDescription">
+        <xsd:annotation yfc:tableName="YFS_LANGUAGE_DESCRIPTION">
+            <xsd:documentation>This table stores description in different languages.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attribute name="Description" type="yfctype:Text-500" use="optional">
+                <xsd:annotation yfc:columnName="DESCRIPTION" yfc:tableName="YFS_LANGUAGE_DESCRIPTION">
+                    <xsd:documentation>A localized description.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ExtendedDescription"
+                type="yfctype:Text-2000" use="optional">
+                <xsd:annotation yfc:columnName="EXTENDED_DESCRIPTION" yfc:tableName="YFS_LANGUAGE_DESCRIPTION">
+                    <xsd:documentation>An extended localized description.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="LocaleCode" type="yfctype:Locale" use="optional">
+                <xsd:annotation yfc:columnName="LOCALE_CODE" yfc:tableName="YFS_LANGUAGE_DESCRIPTION">
+                    <xsd:documentation>Locale for which the extended description is stored.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ShortDescription"
+                type="yfctype:Text-100" use="optional">
+                <xsd:annotation yfc:columnName="SHORT_DESCRIPTION" yfc:tableName="YFS_LANGUAGE_DESCRIPTION">
+                    <xsd:documentation>Short description.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

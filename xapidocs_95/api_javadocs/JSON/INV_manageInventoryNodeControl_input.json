@@ -1,0 +1,12 @@
+{
+  "InvPictureIncorrectTillDate": "",
+  "InventoryPictureCorrect": "Y",
+  "InventoryPictureCorrectForAllItemsAtNode": "Y",
+  "ItemID": "Required",
+  "Node": "Required",
+  "NodeControlType": "",
+  "OrganizationCode": "Required",
+  "ProductClass": "",
+  "StartDate": "",
+  "UnitOfMeasure": ""
+}

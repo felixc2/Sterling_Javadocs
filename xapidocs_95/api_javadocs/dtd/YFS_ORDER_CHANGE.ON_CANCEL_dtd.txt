@@ -1,0 +1,359 @@
+<!ELEMENT Order ( OrderLines?,PriceInfo?,OrderAudit?,AddedAwards?,RemovedAwards? )>
+<!ATTLIST Order AutoCancelDate CDATA #IMPLIED>
+<!ATTLIST Order BillToID CDATA #IMPLIED>
+<!ATTLIST Order BuyerOrganizationCode CDATA #IMPLIED>
+<!ATTLIST Order CustomerRewardsNo CDATA #IMPLIED>
+<!ATTLIST Order DocumentType CDATA #IMPLIED>
+<!ATTLIST Order EnterpriseCode CDATA #IMPLIED>
+<!ATTLIST Order OrderHeaderKey CDATA #IMPLIED>
+<!ATTLIST Order OrderNo CDATA #IMPLIED>
+<!ATTLIST Order SellerOrganizationCode CDATA #IMPLIED>
+<!ATTLIST Order TeamCode CDATA #IMPLIED>
+<!ATTLIST Order a-dtype NMTOKENS
+                       "AutoCancelDate dateTime">
+
+<!ELEMENT OrderAuditLevel ( OrderLine?,OrderRelease?,OrderAuditDetails?,ModificationTypes? )>
+<!ATTLIST OrderAuditLevel ModificationLevel CDATA #IMPLIED>
+<!ATTLIST OrderAuditLevel ModificationLevelScreenName CDATA #IMPLIED>
+<!ATTLIST OrderAuditLevel OrderLineKey CDATA #IMPLIED>
+<!ATTLIST OrderAuditLevel OrderReleaseKey CDATA #IMPLIED>
+
+<!ELEMENT ModificationTypes ( ModificationType* )>
+
+<!ELEMENT Attribute EMPTY>
+<!ATTLIST Attribute Extended (N|Y) #IMPLIED>
+<!ATTLIST Attribute ModificationType CDATA #IMPLIED>
+<!ATTLIST Attribute Name CDATA #REQUIRED>
+<!ATTLIST Attribute NewValue CDATA #REQUIRED>
+<!ATTLIST Attribute OldValue CDATA #REQUIRED>
+
+<!ELEMENT Attributes ( Attribute+ )>
+
+<!ELEMENT OrderAudit ( Order?,OrderAuditLevels? )>
+<!ATTLIST OrderAudit AuditTransactionId CDATA #IMPLIED>
+<!ATTLIST OrderAudit CreateUserName CDATA #IMPLIED>
+<!ATTLIST OrderAudit Createts CDATA #IMPLIED>
+<!ATTLIST OrderAudit Createuserid CDATA #IMPLIED>
+<!ATTLIST OrderAudit ModifyUserName CDATA #IMPLIED>
+<!ATTLIST OrderAudit Modifyts CDATA #IMPLIED>
+<!ATTLIST OrderAudit Modifyuserid CDATA #IMPLIED>
+<!ATTLIST OrderAudit NewBuffer CDATA #IMPLIED>
+<!ATTLIST OrderAudit OldBuffer CDATA #IMPLIED>
+<!ATTLIST OrderAudit OrderAuditKey CDATA #IMPLIED>
+<!ATTLIST OrderAudit OrderHeaderKey CDATA #IMPLIED>
+<!ATTLIST OrderAudit OrderLineKey CDATA #IMPLIED>
+<!ATTLIST OrderAudit OrderReleaseKey CDATA #IMPLIED>
+<!ATTLIST OrderAudit ReasonCode CDATA #IMPLIED>
+<!ATTLIST OrderAudit ReasonText CDATA #IMPLIED>
+<!ATTLIST OrderAudit Reference1 CDATA #IMPLIED>
+<!ATTLIST OrderAudit Reference2 CDATA #IMPLIED>
+<!ATTLIST OrderAudit Reference3 CDATA #IMPLIED>
+<!ATTLIST OrderAudit Reference4 CDATA #IMPLIED>
+<!ATTLIST OrderAudit XMLFlag CDATA #IMPLIED>
+<!ATTLIST OrderAudit a-dtype NMTOKENS
+                            "Createts dateTime
+                             Modifyts dateTime">
+
+<!ELEMENT PriceInfo EMPTY>
+<!ATTLIST PriceInfo ChangeInTotalAmount CDATA #IMPLIED>
+<!ATTLIST PriceInfo Currency CDATA #IMPLIED>
+<!ATTLIST PriceInfo EnterpriseCurrency CDATA #IMPLIED>
+<!ATTLIST PriceInfo ReportingConversionDate CDATA #IMPLIED>
+<!ATTLIST PriceInfo ReportingConversionRate CDATA #IMPLIED>
+<!ATTLIST PriceInfo TotalAmount CDATA #IMPLIED>
+<!ATTLIST PriceInfo a-dtype NMTOKENS
+                           "ReportingConversionDate dateTime
+                            ReportingConversionRate decimal
+                            TotalAmount decimal">
+
+<!ELEMENT WorkOrders ( WorkOrder* )>
+<!ATTLIST WorkOrders NumberOfWorkOrders CDATA #IMPLIED>
+<!ATTLIST WorkOrders a-dtype NMTOKENS
+                            "NumberOfWorkOrders int">
+
+<!ELEMENT Item ( LanguageDescriptionList? )>
+<!ATTLIST Item AlternateItemID CDATA #IMPLIED>
+<!ATTLIST Item BundleFulfillmentMode CDATA #IMPLIED>
+<!ATTLIST Item CostCurrency CDATA #IMPLIED>
+<!ATTLIST Item CountryOfOrigin CDATA #IMPLIED>
+<!ATTLIST Item CustomerItem CDATA #IMPLIED>
+<!ATTLIST Item CustomerItemDesc CDATA #IMPLIED>
+<!ATTLIST Item ECCNNo CDATA #IMPLIED>
+<!ATTLIST Item HarmonizedCode CDATA #IMPLIED>
+<!ATTLIST Item ISBN CDATA #IMPLIED>
+<!ATTLIST Item ItemDesc CDATA #IMPLIED>
+<!ATTLIST Item ItemID CDATA #IMPLIED>
+<!ATTLIST Item ItemShortDesc CDATA #IMPLIED>
+<!ATTLIST Item ItemWeight CDATA #IMPLIED>
+<!ATTLIST Item ItemWeightUOM CDATA #IMPLIED>
+<!ATTLIST Item ManufacturerItem CDATA #IMPLIED>
+<!ATTLIST Item ManufacturerItemDesc CDATA #IMPLIED>
+<!ATTLIST Item ManufacturerName CDATA #IMPLIED>
+<!ATTLIST Item NMFCClass CDATA #IMPLIED>
+<!ATTLIST Item NMFCCode CDATA #IMPLIED>
+<!ATTLIST Item NMFCDescription CDATA #IMPLIED>
+<!ATTLIST Item ProductClass CDATA #IMPLIED>
+<!ATTLIST Item ProductLine CDATA #IMPLIED>
+<!ATTLIST Item ScheduleBCode CDATA #IMPLIED>
+<!ATTLIST Item SubstituteItemID CDATA #IMPLIED>
+<!ATTLIST Item SubstituteItemUOM CDATA #IMPLIED>
+<!ATTLIST Item SupplierItem CDATA #IMPLIED>
+<!ATTLIST Item SupplierItemDesc CDATA #IMPLIED>
+<!ATTLIST Item TaxProductCode CDATA #IMPLIED>
+<!ATTLIST Item UPCCode CDATA #IMPLIED>
+<!ATTLIST Item UnitCost CDATA #IMPLIED>
+<!ATTLIST Item UnitOfMeasure CDATA #IMPLIED>
+<!ATTLIST Item a-dtype NMTOKENS
+                      "ItemWeight decimal
+                       UnitCost decimal">
+
+<!ELEMENT WorkOrder ( WorkOrderAppointments? )>
+<!ATTLIST WorkOrder AdditionalRequestedQuantity CDATA #IMPLIED>
+<!ATTLIST WorkOrder ApptStatusDescription CDATA #IMPLIED>
+<!ATTLIST WorkOrder CaseId CDATA #IMPLIED>
+<!ATTLIST WorkOrder ComputedRequestedQuantity CDATA #IMPLIED>
+<!ATTLIST WorkOrder CurrentApptSeq CDATA #IMPLIED>
+<!ATTLIST WorkOrder DelayAppointmentTaking CDATA #IMPLIED>
+<!ATTLIST WorkOrder DocumentType CDATA #IMPLIED>
+<!ATTLIST WorkOrder EnterpriseCode CDATA #IMPLIED>
+<!ATTLIST WorkOrder FinishNoLaterThan CDATA #IMPLIED>
+<!ATTLIST WorkOrder HoldFlag CDATA #IMPLIED>
+<!ATTLIST WorkOrder InvUpdateActivityCode CDATA #IMPLIED>
+<!ATTLIST WorkOrder IsMultiApptRequired CDATA #IMPLIED>
+<!ATTLIST WorkOrder IsPlanningComplete CDATA #IMPLIED>
+<!ATTLIST WorkOrder IsQuantityRequestedOverridden CDATA #IMPLIED>
+<!ATTLIST WorkOrder ItemID CDATA #IMPLIED>
+<!ATTLIST WorkOrder LevelOfService CDATA #IMPLIED>
+<!ATTLIST WorkOrder NextAlertTs CDATA #IMPLIED>
+<!ATTLIST WorkOrder NodeKey CDATA #IMPLIED>
+<!ATTLIST WorkOrder OpenWorkOrderFlag CDATA #IMPLIED>
+<!ATTLIST WorkOrder OrderHeaderKey CDATA #IMPLIED>
+<!ATTLIST WorkOrder OrderLineKey CDATA #IMPLIED>
+<!ATTLIST WorkOrder OrderNo CDATA #IMPLIED>
+<!ATTLIST WorkOrder PalletId CDATA #IMPLIED>
+<!ATTLIST WorkOrder PipeLineKey CDATA #IMPLIED>
+<!ATTLIST WorkOrder PreCallStatus CDATA #IMPLIED>
+<!ATTLIST WorkOrder PreCallStatusDescription CDATA #IMPLIED>
+<!ATTLIST WorkOrder PreferredResourcePoolId CDATA #IMPLIED>
+<!ATTLIST WorkOrder PreferredServiceResourceId CDATA #IMPLIED>
+<!ATTLIST WorkOrder Priority CDATA #IMPLIED>
+<!ATTLIST WorkOrder ProductAmount CDATA #IMPLIED>
+<!ATTLIST WorkOrder ProductClass CDATA #IMPLIED>
+<!ATTLIST WorkOrder PromisedApptEndDate CDATA #IMPLIED>
+<!ATTLIST WorkOrder PromisedApptStartDate CDATA #IMPLIED>
+<!ATTLIST WorkOrder ProviderOrganizationCode CDATA #IMPLIED>
+<!ATTLIST WorkOrder Purpose CDATA #IMPLIED>
+<!ATTLIST WorkOrder QuantityAllocated CDATA #IMPLIED>
+<!ATTLIST WorkOrder QuantityCompleted CDATA #IMPLIED>
+<!ATTLIST WorkOrder QuantityReleased CDATA #IMPLIED>
+<!ATTLIST WorkOrder QuantityRemoved CDATA #IMPLIED>
+<!ATTLIST WorkOrder QuantityRequested CDATA #IMPLIED>
+<!ATTLIST WorkOrder ReasonCode CDATA #IMPLIED>
+<!ATTLIST WorkOrder ReasonCodeDescription CDATA #IMPLIED>
+<!ATTLIST WorkOrder ReasonText CDATA #IMPLIED>
+<!ATTLIST WorkOrder ReleaseAllowed CDATA #IMPLIED>
+<!ATTLIST WorkOrder Segment CDATA #IMPLIED>
+<!ATTLIST WorkOrder SegmentType CDATA #IMPLIED>
+<!ATTLIST WorkOrder SellerOrganizationCode CDATA #IMPLIED>
+<!ATTLIST WorkOrder SerialNo CDATA #IMPLIED>
+<!ATTLIST WorkOrder ServiceAmount CDATA #IMPLIED>
+<!ATTLIST WorkOrder ServiceComplexityLevel CDATA #IMPLIED>
+<!ATTLIST WorkOrder ServiceItemDescription CDATA #IMPLIED>
+<!ATTLIST WorkOrder ServiceItemGroupCode CDATA #IMPLIED>
+<!ATTLIST WorkOrder ServiceItemID CDATA #IMPLIED>
+<!ATTLIST WorkOrder ServiceSupervisorId CDATA #IMPLIED>
+<!ATTLIST WorkOrder ServiceUom CDATA #IMPLIED>
+<!ATTLIST WorkOrder ShipByDate CDATA #IMPLIED>
+<!ATTLIST WorkOrder ShipmentKey CDATA #IMPLIED>
+<!ATTLIST WorkOrder ShipmentNo CDATA #IMPLIED>
+<!ATTLIST WorkOrder StartNoEarlierThan CDATA #IMPLIED>
+<!ATTLIST WorkOrder Status CDATA #IMPLIED>
+<!ATTLIST WorkOrder StatusDate CDATA #IMPLIED>
+<!ATTLIST WorkOrder StatusDescription CDATA #IMPLIED>
+<!ATTLIST WorkOrder Timezone CDATA #IMPLIED>
+<!ATTLIST WorkOrder TotalAmount CDATA #IMPLIED>
+<!ATTLIST WorkOrder TotalVolume CDATA #IMPLIED>
+<!ATTLIST WorkOrder TotalWeight CDATA #IMPLIED>
+<!ATTLIST WorkOrder Uom CDATA #IMPLIED>
+<!ATTLIST WorkOrder VolumeUOM CDATA #IMPLIED>
+<!ATTLIST WorkOrder WeightUOM CDATA #IMPLIED>
+<!ATTLIST WorkOrder WorkOrderKey CDATA #IMPLIED>
+<!ATTLIST WorkOrder WorkOrderNo CDATA #IMPLIED>
+<!ATTLIST WorkOrder isHistory CDATA #IMPLIED>
+<!ATTLIST WorkOrder a-dtype NMTOKENS
+                           "AdditionalRequestedQuantity decimal
+                            ComputedRequestedQuantity decimal
+                            FinishNoLaterThan dateTime
+                            NextAlertTs dateTime
+                            Priority int
+                            ProductAmount decimal
+                            PromisedApptEndDate dateTime
+                            PromisedApptStartDate dateTime
+                            QuantityAllocated decimal
+                            QuantityCompleted decimal
+                            QuantityReleased decimal
+                            QuantityRemoved decimal
+                            QuantityRequested decimal
+                            ServiceAmount decimal
+                            ServiceComplexityLevel int
+                            ShipByDate dateTime
+                            StartNoEarlierThan dateTime
+                            StatusDate dateTime
+                            TotalVolume decimal
+                            TotalWeight decimal">
+
+<!ELEMENT OrderLine ( Item?,LinePriceInfo?,StatusBreakupForCanceledQty?,WorkOrders?,AddedAwards?,RemovedAwards? )>
+<!ATTLIST OrderLine ChangeInOrderedQty CDATA #IMPLIED>
+<!ATTLIST OrderLine OrderLineKey CDATA #IMPLIED>
+<!ATTLIST OrderLine OrderedQty CDATA #IMPLIED>
+<!ATTLIST OrderLine PrimeLineNo CDATA #IMPLIED>
+<!ATTLIST OrderLine SubLineNo CDATA #IMPLIED>
+<!ATTLIST OrderLine a-dtype NMTOKENS
+                           "ChangeInOrderedQty decimal
+                            OrderedQty decimal
+                            PrimeLineNo int
+                            SubLineNo int">
+
+<!ELEMENT StatusBreakupForCanceledQty ( CanceledFrom* )>
+
+<!ELEMENT LinePriceInfo EMPTY>
+<!ATTLIST LinePriceInfo ChangeInLineTotal CDATA #IMPLIED>
+<!ATTLIST LinePriceInfo LineTotal CDATA #IMPLIED>
+<!ATTLIST LinePriceInfo TaxExemptionCertificate CDATA #IMPLIED>
+<!ATTLIST LinePriceInfo TaxableFlag CDATA #IMPLIED>
+<!ATTLIST LinePriceInfo a-dtype NMTOKENS
+                               "LineTotal decimal">
+
+<!ELEMENT ID EMPTY>
+<!ATTLIST ID Name CDATA #REQUIRED>
+<!ATTLIST ID Value CDATA #REQUIRED>
+
+<!ELEMENT CanceledFrom ( Details? )>
+<!ATTLIST CanceledFrom OrderLineScheduleKey CDATA #IMPLIED>
+<!ATTLIST CanceledFrom OrderReleaseKey CDATA #IMPLIED>
+<!ATTLIST CanceledFrom OrderReleaseStatusKey CDATA #IMPLIED>
+<!ATTLIST CanceledFrom Quantity CDATA #IMPLIED>
+<!ATTLIST CanceledFrom Status CDATA #IMPLIED>
+<!ATTLIST CanceledFrom StatusDate CDATA #IMPLIED>
+<!ATTLIST CanceledFrom StatusDescription CDATA #IMPLIED>
+<!ATTLIST CanceledFrom a-dtype NMTOKENS
+                              "StatusDate dateTime">
+
+<!ELEMENT AddedAwards ( Award* )>
+<!ATTLIST AddedAwards TotalNumberOfRecords CDATA #IMPLIED>
+<!ATTLIST AddedAwards a-dtype NMTOKENS
+                             "TotalNumberOfRecords decimal">
+
+<!ELEMENT OrderAuditDetails ( OrderAuditDetail* )>
+
+<!ELEMENT OrderRelease EMPTY>
+<!ATTLIST OrderRelease ReleaseNo CDATA #IMPLIED>
+<!ATTLIST OrderRelease a-dtype NMTOKENS
+                              "ReleaseNo int">
+
+<!ELEMENT WorkOrderAppointments ( WorkOrderAppointment* )>
+
+<!ELEMENT LanguageDescription EMPTY>
+<!ATTLIST LanguageDescription Description CDATA #IMPLIED>
+<!ATTLIST LanguageDescription LocaleCode CDATA #IMPLIED>
+
+<!ELEMENT OrderLines ( OrderLine* )>
+
+<!ELEMENT RemovedAwards ( Award* )>
+<!ATTLIST RemovedAwards TotalNumberOfRecords CDATA #IMPLIED>
+<!ATTLIST RemovedAwards a-dtype NMTOKENS
+                               "TotalNumberOfRecords decimal">
+
+<!ELEMENT CustomAuditDetails ( OrderAuditDetail* )>
+
+<!ELEMENT Details EMPTY>
+<!ATTLIST Details ExpectedDeliveryDate CDATA #IMPLIED>
+<!ATTLIST Details ExpectedShipmentDate CDATA #IMPLIED>
+<!ATTLIST Details ReceivingNode CDATA #IMPLIED>
+<!ATTLIST Details ShipByDate CDATA #IMPLIED>
+<!ATTLIST Details ShipNode CDATA #IMPLIED>
+<!ATTLIST Details TagNumber CDATA #IMPLIED>
+<!ATTLIST Details a-dtype NMTOKENS
+                         "ExpectedDeliveryDate dateTime
+                          ExpectedShipmentDate dateTime
+                          ShipByDate dateTime">
+
+<!ELEMENT ModificationType EMPTY>
+<!ATTLIST ModificationType Name CDATA #IMPLIED>
+<!ATTLIST ModificationType ScreenName CDATA #IMPLIED>
+
+<!ELEMENT Award EMPTY>
+<!ATTLIST Award AwardAmount CDATA #IMPLIED>
+<!ATTLIST Award AwardApplied CDATA #IMPLIED>
+<!ATTLIST Award AwardId CDATA #IMPLIED>
+<!ATTLIST Award AwardKey CDATA #IMPLIED>
+<!ATTLIST Award AwardType CDATA #IMPLIED>
+<!ATTLIST Award ChargeCategory CDATA #IMPLIED>
+<!ATTLIST Award ChargeName CDATA #IMPLIED>
+<!ATTLIST Award DenialReason CDATA #IMPLIED>
+<!ATTLIST Award Description CDATA #IMPLIED>
+<!ATTLIST Award IsPromotionOnOrder CDATA #IMPLIED>
+<!ATTLIST Award IsPromotionOnOrderLine CDATA #IMPLIED>
+<!ATTLIST Award PosReasonCode CDATA #IMPLIED>
+<!ATTLIST Award PromotionId CDATA #IMPLIED>
+<!ATTLIST Award PromotionKey CDATA #IMPLIED>
+<!ATTLIST Award a-dtype NMTOKENS
+                       "AwardAmount decimal">
+
+<!ELEMENT OrderAuditLevels ( OrderAuditLevel* )>
+
+<!ELEMENT IDs ( ID* )>
+
+<!ELEMENT LanguageDescriptionList ( LanguageDescription? )>
+
+<!ELEMENT WorkOrderAppointment EMPTY>
+<!ATTLIST WorkOrderAppointment AdditionalEquipmentUsed CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment AlertSales CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment AlertScheduler CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment AllocatedQuantity CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ApptSeq CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ApptStatus CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment AttentionRequired CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ConsiderCurrentSlot CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ExecutionBy CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ExecutionComments CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ExecutionDuration CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ExecutionEndTime CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ExecutionStartTime CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ExpectedApptEndDate CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ExpectedApptStartDate CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment IsRoutePlanningComplete CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ItemsNotUsed CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment NonInventoryItemsReturned CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment PromisedApptEndDate CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment PromisedApptStartDate CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment RequestedQuantity CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment RequestedVolume CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment RequestedWeight CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ResourcePoolId CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment ServiceResourceId CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment StopNumber CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment VehicleNumber CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment VehicleOdometerReading CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment VehicleServiceRequest CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment WorkOrderApptKey CDATA #IMPLIED>
+<!ATTLIST WorkOrderAppointment a-dtype NMTOKENS
+                                      "AllocatedQuantity decimal
+                                       ApptSeq int
+                                       ExecutionDuration decimal
+                                       ExecutionEndTime dateTime
+                                       ExecutionStartTime dateTime
+                                       ExpectedApptEndDate dateTime
+                                       ExpectedApptStartDate dateTime
+                                       PromisedApptEndDate dateTime
+                                       PromisedApptStartDate dateTime
+                                       RequestedQuantity decimal
+                                       RequestedVolume decimal
+                                       RequestedWeight decimal
+                                       StopNumber int
+                                       VehicleOdometerReading decimal">
+
+<!ELEMENT OrderAuditDetail ( IDs?,Attributes?,CustomAuditDetails? )>
+<!ATTLIST OrderAuditDetail Action CDATA #IMPLIED>
+<!ATTLIST OrderAuditDetail AuditType CDATA #IMPLIED>
+

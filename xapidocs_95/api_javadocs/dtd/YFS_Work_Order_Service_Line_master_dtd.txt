@@ -1,0 +1,30 @@
+<!ELEMENT WorkOrderServiceLine ( OrderLine )>
+<!ATTLIST WorkOrderServiceLine CauseAppointmentChange CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine HasChangedByThisTransaction CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine IsComplete CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine ItemDescription CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine ItemGroupCode CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine ItemID CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine ItemShortDescription CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine LineNo CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine QuantityRequired CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine Uom CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine WorkOrderServiceLineKey CDATA #IMPLIED>
+<!ATTLIST WorkOrderServiceLine a-dtype NMTOKENS
+                                      "LineNo int
+                                       QuantityRequired decimal">
+
+<!ELEMENT Order EMPTY>
+<!ATTLIST Order DocumentType CDATA #IMPLIED>
+<!ATTLIST Order EnterpriseCode CDATA #IMPLIED>
+<!ATTLIST Order OrderHeaderKey CDATA #IMPLIED>
+<!ATTLIST Order OrderNo CDATA #IMPLIED>
+
+<!ELEMENT OrderLine ( Order? )>
+<!ATTLIST OrderLine OrderLineKey CDATA #IMPLIED>
+<!ATTLIST OrderLine PrimeLineNo CDATA #IMPLIED>
+<!ATTLIST OrderLine SubLineNo CDATA #IMPLIED>
+<!ATTLIST OrderLine a-dtype NMTOKENS
+                           "PrimeLineNo int
+                            SubLineNo int">
+

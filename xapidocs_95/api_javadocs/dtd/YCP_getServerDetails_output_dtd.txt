@@ -1,0 +1,13 @@
+<!ELEMENT Server ( Service? )>
+<!ATTLIST Server Id CDATA #IMPLIED>
+<!ATTLIST Server Name CDATA #IMPLIED>
+<!ATTLIST Server Status CDATA #IMPLIED>
+<!ATTLIST Server Type CDATA #IMPLIED>
+
+<!ELEMENT Service EMPTY>
+<!ATTLIST Service Name CDATA #IMPLIED>
+<!ATTLIST Service NoOfThreads CDATA #IMPLIED>
+<!ATTLIST Service Status CDATA #IMPLIED>
+<!ATTLIST Service a-dtype NMTOKENS
+                         "NoOfThreads int">
+

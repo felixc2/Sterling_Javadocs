@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Licensed Materials - Property of IBM
+IBM Sterling Selling And Fulfillment Suite
+(C) Copyright IBM Corp. 2010, 2016 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ -->
+<Promise>
+    <PromiseLines>
+        <PromiseLine CarrierServiceCode="" DeliveryMethod=""
+            DistributionRuleId="" FillQuantity="" FulfillmentType=""
+            ItemID="" LineId="" ProductClass="" ReceivingNode=""
+            RequiredQty="" SCAC="" ScacAndServiceKey="" ShipNode="" UnitOfMeasure="">
+            <PossibleAssignments>
+                <Assignment AssignmentKey="" Capacity=""
+                    CapacityConsumed="" CapacityUnitOfMeasure=""
+                    CapacityUtilization="" CarrierServiceCode=""
+                    DeliveryDate="" Distance="" NodeProcessingDate=""
+                    ProcuredQty="" ProductAvailDate="" Quantity=""
+                    SCAC="" ShipDate="" ShipNode="">
+                    <PossibleCarriers>
+                        <Carrier CarrierServiceCode=""
+                            ExpectedDeliveryDate="" ExpectedShipmentDate=""/>
+                    </PossibleCarriers>
+                    <Supplies>
+                        <Supply AvailableQuantity="" FirstShipDate=""
+                            LastShipDate="" SafetyQuantity="" Track=""/>
+                    </Supplies>
+                    <Costs Currency="" HoursOfSupplyCostPerUnit=""
+                        ItemInventoryCostPerUnit=""
+                        NodePriorityCostPerUnit=""
+                        NodeShippingCapacityCostPerUnit=""
+                        OutboundShipmentHandlingCostPerUnit="" ShipmentDelayCostPerUnit=""/>
+                    <SubstituteItems>
+                        <SubstituteItem AssignmentKey="" Capacity=""
+                            CapacityConsumed="" CapacityUnitOfMeasure=""
+                            CapacityUtilization="" ItemID=""
+                            ProcuredQty="" ProductClass="" Quantity=""
+                            ShipDate="" UOM="">
+                            <Costs Currency="" ItemInventoryCostPerUnit=""/>
+                            <Procurements>
+                                <Procurement AssignmentKey=""
+                                    Capacity="" CapacityConsumed=""
+                                    CapacityUnitOfMeasure=""
+                                    CapacityUtilization=""
+                                    ProcureFromNode="" Quantity="" ShipDate="">
+                                    <Costs Currency=""
+                                    ItemInventoryCostPerUnit=""
+                                    NodePriorityCostPerUnit=""
+                                    NodeShippingCapacityCostPerUnit="" OutboundShipmentHandlingCostPerUnit=""/>
+                                    <Supplies>
+                                    <Supply AvailableQuantity=""
+                                    FirstShipDate=""
+                                    LastShipDate=""
+                                    SafetyQuantity="" Track=""/>
+                                    </Supplies>
+                                </Procurement>
+                            </Procurements>
+                            <Supplies>
+                                <Supply AvailableQuantity=""
+                                    FirstShipDate="" LastShipDate=""
+                                    SafetyQuantity="" Track=""/>
+                            </Supplies>
+                        </SubstituteItem>
+                    </SubstituteItems>
+                    <Procurements>
+                        <Procurement AssignmentKey="" Capacity=""
+                            CapacityConsumed="" CapacityUnitOfMeasure=""
+                            CapacityUtilization="" ProcureFromNode=""
+                            Quantity="" ShipDate="">
+                            <Costs Currency=""
+                                ItemInventoryCostPerUnit=""
+                                NodePriorityCostPerUnit=""
+                                NodeShippingCapacityCostPerUnit="" OutboundShipmentHandlingCostPerUnit=""/>
+                            <Supplies>
+                                <Supply AvailableQuantity=""
+                                    FirstShipDate="" LastShipDate=""
+                                    SafetyQuantity="" Track=""/>
+                            </Supplies>
+                        </Procurement>
+                    </Procurements>
+                </Assignment>
+            </PossibleAssignments>
+        </PromiseLine>
+    </PromiseLines>
+</Promise>

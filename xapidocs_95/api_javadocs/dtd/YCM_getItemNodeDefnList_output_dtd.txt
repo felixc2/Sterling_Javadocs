@@ -1,0 +1,21 @@
+<!ELEMENT ItemNodeDefnList ( ItemNodeDefn* )>
+
+<!ELEMENT ItemNodeDefn EMPTY>
+<!ATTLIST ItemNodeDefn FutureSafetyFactorPercentage CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn ItemID CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn ItemNodeDefnKey CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn Node CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn OnhandSafetyFactorPercentage CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn OnhandSafetyFactorQuantity CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn OperationalConfigurationComplete CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn OrganizationCode CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn PickingType CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn ReceivingType CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn StorageType CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn UnitOfMeasure CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn VelocityCode CDATA #IMPLIED>
+<!ATTLIST ItemNodeDefn a-dtype NMTOKENS
+                              "FutureSafetyFactorPercentage decimal
+                               OnhandSafetyFactorPercentage decimal
+                               OnhandSafetyFactorQuantity decimal">
+

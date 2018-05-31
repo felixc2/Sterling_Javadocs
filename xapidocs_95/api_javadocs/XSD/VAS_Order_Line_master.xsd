@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.sterlingcommerce.com/documentation/VAS/Order_Line_master"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:yfc="http://www.sterlingcommerce.com/documentation/VAS/Order_Line_master" xmlns:yfctype="http://www.sterlingcommerce.com/documentation/types">
+    <xsd:annotation yfc:fileName="VAS_Order_Line_master.xsd" yfc:rootElement="OrderLine">
+        <xsd:appinfo source="yfc:structure">
+            <OrderLine hasAttributes="Y"/>
+        </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:import
+        namespace="http://www.sterlingcommerce.com/documentation/types" schemaLocation="datatypes.xsd"/>
+    <xsd:element name="OrderLine" type="yfc:OrderLineXSDType">
+        <xsd:annotation yfc:tableName="YFS_ORDER_LINE">
+            <xsd:documentation>This table stores order line information, including item details and shipping information. Multiple lines can be created for a single order defined in the YFS_ORDER_HEADER table.</xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+    <xsd:complexType name="OrderLineXSDType">
+        <xsd:attribute name="OrderLineKey" type="yfctype:Key" use="optional">
+            <xsd:annotation yfc:columnName="ORDER_LINE_KEY" yfc:tableName="YFS_ORDER_LINE">
+                <xsd:documentation>The primary key for the YFS_ORDER_LINE table.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="OrderedQty" type="yfctype:Quantity" use="optional">
+            <xsd:annotation yfc:columnName="ORDERED_QTY" yfc:tableName="YFS_ORDER_LINE">
+                <xsd:documentation>The quantity of the line item that has been ordered. If part of the line is cancelled, this number is reduced appropriately. If an order line is returned, this number is not reduced.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="PrimeLineNo" type="yfctype:LineNo" use="optional">
+            <xsd:annotation yfc:columnName="PRIME_LINE_NO" yfc:tableName="YFS_ORDER_LINE">
+                <xsd:documentation>The order line number.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="SubLineNo" type="yfctype:LineNo" use="optional">
+            <xsd:annotation yfc:columnName="SUB_LINE_NO" yfc:tableName="YFS_ORDER_LINE">
+                <xsd:documentation>The sub line number.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="Timezone" type="yfctype:Text-40" use="optional">
+            <xsd:annotation yfc:columnName="TIMEZONE" yfc:tableName="YFS_ORDER_LINE">
+                <xsd:documentation>The timezone in which the promised appointment has been recorded.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+</xsd:schema>

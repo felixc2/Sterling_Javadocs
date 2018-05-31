@@ -1,0 +1,31 @@
+<!ELEMENT WorkOrderProdDelivery ( OrderLine )>
+<!ATTLIST WorkOrderProdDelivery CauseAppointmentChange CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery HasChangedByThisTransaction CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery ItemDescription CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery ItemID CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery ItemShortDescription CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery LineNo CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery ProductClass CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery QuantityDelivered CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery QuantityRequired CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery Uom CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery WorkOrderProdDeliveryKey CDATA #IMPLIED>
+<!ATTLIST WorkOrderProdDelivery a-dtype NMTOKENS
+                                       "LineNo int
+                                        QuantityDelivered decimal
+                                        QuantityRequired decimal">
+
+<!ELEMENT Order EMPTY>
+<!ATTLIST Order DocumentType CDATA #IMPLIED>
+<!ATTLIST Order EnterpriseCode CDATA #IMPLIED>
+<!ATTLIST Order OrderHeaderKey CDATA #IMPLIED>
+<!ATTLIST Order OrderNo CDATA #IMPLIED>
+
+<!ELEMENT OrderLine ( Order? )>
+<!ATTLIST OrderLine OrderLineKey CDATA #IMPLIED>
+<!ATTLIST OrderLine PrimeLineNo CDATA #IMPLIED>
+<!ATTLIST OrderLine SubLineNo CDATA #IMPLIED>
+<!ATTLIST OrderLine a-dtype NMTOKENS
+                           "PrimeLineNo int
+                            SubLineNo int">
+

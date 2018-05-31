@@ -1,0 +1,26 @@
+{
+  "CauseAppointmentChange": "",
+  "HasChangedByThisTransaction": "",
+  "IsComplete": "",
+  "ItemDescription": "",
+  "ItemGroupCode": "",
+  "ItemID": "",
+  "ItemShortDescription": "",
+  "LineNo": "",
+  "OrderLine": {
+    "Order": [
+      {
+        "DocumentType": "",
+        "EnterpriseCode": "",
+        "OrderHeaderKey": "",
+        "OrderNo": ""
+      }
+    ],
+    "OrderLineKey": "",
+    "PrimeLineNo": "",
+    "SubLineNo": ""
+  },
+  "QuantityRequired": "",
+  "Uom": "",
+  "WorkOrderServiceLineKey": ""
+}

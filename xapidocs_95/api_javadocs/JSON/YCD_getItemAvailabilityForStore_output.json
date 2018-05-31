@@ -1,0 +1,26 @@
+{
+  "PromiseLines": {
+    "PromiseLine": [
+      {
+        "Availabilities": {
+          "Availability": {
+            "DeliveryMethod": "",
+            "EarliestShipDate": "",
+            "HasAnyUnavailableQty": "",
+            "ProductAvailDate": "",
+            "ProductAvailableDate": "",
+            "ShipNode": "",
+            "ShipNodeDescription": ""
+          },
+          "HasAnyUnavailableQty": "",
+          "IsAvailabilityRealTimeData": ""
+        },
+        "ItemID": "",
+        "ProductClass": "",
+        "Quantity": "",
+        "RequiredQty": "",
+        "UnitOfMeasure": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+<!ELEMENT Promise ( PromiseLines? )>
+
+<!ELEMENT Procurements ( Procurement* )>
+
+<!ELEMENT Procurement ( Costs?,Supplies? )>
+<!ATTLIST Procurement AssignmentKey CDATA #IMPLIED>
+<!ATTLIST Procurement Capacity CDATA #IMPLIED>
+<!ATTLIST Procurement CapacityConsumed CDATA #IMPLIED>
+<!ATTLIST Procurement CapacityUnitOfMeasure CDATA #IMPLIED>
+<!ATTLIST Procurement CapacityUtilization CDATA #IMPLIED>
+<!ATTLIST Procurement ProcureFromNode CDATA #IMPLIED>
+<!ATTLIST Procurement Quantity CDATA #IMPLIED>
+<!ATTLIST Procurement ShipDate CDATA #IMPLIED>
+<!ATTLIST Procurement a-dtype NMTOKENS
+                             "Capacity decimal
+                              CapacityConsumed decimal
+                              CapacityUtilization decimal
+                              Quantity decimal
+                              ShipDate dateTime">
+
+<!ELEMENT Costs EMPTY>
+<!ATTLIST Costs Currency CDATA #IMPLIED>
+<!ATTLIST Costs HoursOfSupplyCostPerUnit CDATA #IMPLIED>
+<!ATTLIST Costs ItemInventoryCostPerUnit CDATA #IMPLIED>
+<!ATTLIST Costs NodePriorityCostPerUnit CDATA #IMPLIED>
+<!ATTLIST Costs NodeShippingCapacityCostPerUnit CDATA #IMPLIED>
+<!ATTLIST Costs OutboundShipmentHandlingCostPerUnit CDATA #IMPLIED>
+<!ATTLIST Costs ShipmentDelayCostPerUnit CDATA #IMPLIED>
+
+<!ELEMENT Supply EMPTY>
+<!ATTLIST Supply AvailableQuantity CDATA #IMPLIED>
+<!ATTLIST Supply FirstShipDate CDATA #IMPLIED>
+<!ATTLIST Supply LastShipDate CDATA #IMPLIED>
+<!ATTLIST Supply SafetyQuantity CDATA #IMPLIED>
+<!ATTLIST Supply Track CDATA #IMPLIED>
+<!ATTLIST Supply a-dtype NMTOKENS
+                        "AvailableQuantity decimal
+                         FirstShipDate dateTime
+                         LastShipDate dateTime
+                         SafetyQuantity decimal">
+
+<!ELEMENT PossibleCarriers ( Carrier* )>
+
+<!ELEMENT SubstituteItem ( Costs?,Procurements?,Supplies? )>
+<!ATTLIST SubstituteItem AssignmentKey CDATA #IMPLIED>
+<!ATTLIST SubstituteItem Capacity CDATA #IMPLIED>
+<!ATTLIST SubstituteItem CapacityConsumed CDATA #IMPLIED>
+<!ATTLIST SubstituteItem CapacityUnitOfMeasure CDATA #IMPLIED>
+<!ATTLIST SubstituteItem CapacityUtilization CDATA #IMPLIED>
+<!ATTLIST SubstituteItem ItemID CDATA #IMPLIED>
+<!ATTLIST SubstituteItem ProcuredQty CDATA #IMPLIED>
+<!ATTLIST SubstituteItem ProductClass CDATA #IMPLIED>
+<!ATTLIST SubstituteItem Quantity CDATA #IMPLIED>
+<!ATTLIST SubstituteItem ShipDate CDATA #IMPLIED>
+<!ATTLIST SubstituteItem UOM CDATA #IMPLIED>
+<!ATTLIST SubstituteItem a-dtype NMTOKENS
+                                "Capacity decimal
+                                 CapacityConsumed decimal
+                                 CapacityUtilization decimal
+                                 ProcuredQty decimal
+                                 Quantity decimal
+                                 ShipDate dateTime">
+
+<!ELEMENT SubstituteItems ( SubstituteItem? )>
+
+<!ELEMENT Assignment ( PossibleCarriers?,Supplies?,Costs?,SubstituteItems?,Procurements? )>
+<!ATTLIST Assignment AssignmentKey CDATA #IMPLIED>
+<!ATTLIST Assignment Capacity CDATA #IMPLIED>
+<!ATTLIST Assignment CapacityConsumed CDATA #IMPLIED>
+<!ATTLIST Assignment CapacityUnitOfMeasure CDATA #IMPLIED>
+<!ATTLIST Assignment CapacityUtilization CDATA #IMPLIED>
+<!ATTLIST Assignment CarrierServiceCode CDATA #IMPLIED>
+<!ATTLIST Assignment DeliveryDate CDATA #IMPLIED>
+<!ATTLIST Assignment Distance CDATA #IMPLIED>
+<!ATTLIST Assignment NodeProcessingDate CDATA #IMPLIED>
+<!ATTLIST Assignment ProcuredQty CDATA #IMPLIED>
+<!ATTLIST Assignment ProductAvailDate CDATA #IMPLIED>
+<!ATTLIST Assignment Quantity CDATA #IMPLIED>
+<!ATTLIST Assignment SCAC CDATA #IMPLIED>
+<!ATTLIST Assignment ShipDate CDATA #IMPLIED>
+<!ATTLIST Assignment ShipNode CDATA #IMPLIED>
+<!ATTLIST Assignment a-dtype NMTOKENS
+                            "Capacity decimal
+                             CapacityConsumed decimal
+                             CapacityUtilization decimal
+                             DeliveryDate dateTime
+                             Distance decimal
+                             NodeProcessingDate dateTime
+                             ProcuredQty decimal
+                             ProductAvailDate dateTime
+                             Quantity decimal
+                             ShipDate dateTime">
+
+<!ELEMENT PossibleAssignments ( Assignment* )>
+
+<!ELEMENT PromiseLine ( PossibleAssignments? )>
+<!ATTLIST PromiseLine CarrierServiceCode CDATA #IMPLIED>
+<!ATTLIST PromiseLine DeliveryMethod CDATA #IMPLIED>
+<!ATTLIST PromiseLine DistributionRuleId CDATA #IMPLIED>
+<!ATTLIST PromiseLine FillQuantity CDATA #IMPLIED>
+<!ATTLIST PromiseLine FulfillmentType CDATA #IMPLIED>
+<!ATTLIST PromiseLine ItemID CDATA #IMPLIED>
+<!ATTLIST PromiseLine LineId CDATA #IMPLIED>
+<!ATTLIST PromiseLine ProductClass CDATA #IMPLIED>
+<!ATTLIST PromiseLine ReceivingNode CDATA #IMPLIED>
+<!ATTLIST PromiseLine RequiredQty CDATA #IMPLIED>
+<!ATTLIST PromiseLine SCAC CDATA #IMPLIED>
+<!ATTLIST PromiseLine ScacAndServiceKey CDATA #IMPLIED>
+<!ATTLIST PromiseLine ShipNode CDATA #IMPLIED>
+<!ATTLIST PromiseLine UnitOfMeasure CDATA #IMPLIED>
+<!ATTLIST PromiseLine a-dtype NMTOKENS
+                             "FillQuantity decimal
+                              RequiredQty decimal">
+
+<!ELEMENT Supplies ( Supply* )>
+
+<!ELEMENT Carrier EMPTY>
+<!ATTLIST Carrier CarrierServiceCode CDATA #IMPLIED>
+<!ATTLIST Carrier ExpectedDeliveryDate CDATA #IMPLIED>
+<!ATTLIST Carrier ExpectedShipmentDate CDATA #IMPLIED>
+<!ATTLIST Carrier a-dtype NMTOKENS
+                         "ExpectedDeliveryDate dateTime
+                          ExpectedShipmentDate dateTime">
+
+<!ELEMENT PromiseLines ( PromiseLine* )>
+

@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="http://www.sterlingcommerce.com/documentation/OMP/getExternalCostForOptions/input"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:yfc="http://www.sterlingcommerce.com/documentation/OMP/getExternalCostForOptions/input" xmlns:yfctype="http://www.sterlingcommerce.com/documentation/types">
+    <xsd:annotation
+        yfc:fileName="OMP_getExternalCostForOptions_input.xsd" yfc:rootElement="Promise">
+        <xsd:appinfo source="yfc:structure">
+            <Promise>
+                <PromiseLines>
+                    <PromiseLine hasAttributes="Y">
+                        <PossibleAssignments>
+                            <Assignment hasAttributes="Y">
+                                <PossibleCarriers>
+                                    <Carrier hasAttributes="Y"/>
+                                </PossibleCarriers>
+                                <Supplies>
+                                    <Supply hasAttributes="Y"/>
+                                </Supplies>
+                                <Costs hasAttributes="Y"/>
+                                <SubstituteItems>
+                                    <SubstituteItem hasAttributes="Y">
+                                    <Costs hasAttributes="Y"/>
+                                    <Procurements>
+                                    <Procurement hasAttributes="Y">
+                                    <Costs hasAttributes="Y"/>
+                                    <Supplies>
+                                    <Supply hasAttributes="Y"/>
+                                    </Supplies>
+                                    </Procurement>
+                                    </Procurements>
+                                    <Supplies>
+                                    <Supply hasAttributes="Y"/>
+                                    </Supplies>
+                                    </SubstituteItem>
+                                </SubstituteItems>
+                                <Procurements>
+                                    <Procurement hasAttributes="Y">
+                                    <Costs hasAttributes="Y"/>
+                                    <Supplies>
+                                    <Supply hasAttributes="Y"/>
+                                    </Supplies>
+                                    </Procurement>
+                                </Procurements>
+                            </Assignment>
+                        </PossibleAssignments>
+                    </PromiseLine>
+                </PromiseLines>
+            </Promise>
+        </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:import
+        namespace="http://www.sterlingcommerce.com/documentation/types" schemaLocation="datatypes.xsd"/>
+    <xsd:element name="Promise" type="yfc:PromiseXSDType"/>
+    <xsd:complexType name="PromiseXSDType">
+        <xsd:all>
+            <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:PromiseLines"/>
+        </xsd:all>
+    </xsd:complexType>
+    <xsd:element name="PromiseLines">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="yfc:PromiseLine"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="PromiseLine">
+        <xsd:annotation yfc:tableName="YFS_ORDER_LINE">
+            <xsd:documentation>
+                <div>
+							This table stores order line information, including item details and shipping information. 
+							Multiple lines can be created for a single order defined in the <code>YFS_ORDER_HEADER</code> table.
+						</div>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:PossibleAssignments"/>
+            </xsd:all>
+            <xsd:attribute name="CarrierServiceCode"
+                type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="CARRIER_SERVICE_CODE" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The carrier service code for this order line.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="DeliveryMethod" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="DELIVERY_METHOD" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The delivery method for the product line.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="DistributionRuleId"
+                type="yfctype:DistributionRuleId" use="optional">
+                <xsd:annotation yfc:columnName="DISTRIBUTION_RULE_ID" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>the identifier of the distribution group that is used to determine the ship node(s) that will ship the order line. If not proviFded, the seller organization's default distribution rule ID is used. If provided, it must be a valid ID for the Seller organization.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="FillQuantity" type="yfctype:Quantity" use="optional">
+                <xsd:annotation yfc:columnName="FILL_QUANTITY" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The minimum order line quantity that must be fulfilled in an order release before it is shipped.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="FulfillmentType" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="FULFILLMENT_TYPE" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The method of fulfilling the order line during scheduling. This field can be matched with the corresponding field in the YFS_SOURCING_RULE_HDR table and the appropriate sourcing rule can be selected.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ItemID" type="yfctype:ItemID" use="optional">
+                <xsd:annotation yfc:columnName="ITEM_ID" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The identifier for the item. The ITEM_ID, UOM, and PRODUCT_CLASS form the unique inventory identifier for an order line. The ITEM_ID, UOM and ORGANIZATION_CODE form the unique item identifier for the Product Management module.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="LineId" type="yfctype:Text-40" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+								Unique identifier for the line. 
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ProductClass"
+                type="yfctype:ProductClass" use="optional">
+                <xsd:annotation yfc:columnName="PRODUCT_CLASS" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The product class. This field is used as an inventory identifier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ReceivingNode" type="yfctype:ShipNode" use="optional">
+                <xsd:annotation yfc:columnName="RECEIVING_NODE" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The receiving node that is associated with this order line.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="RequiredQty" type="yfctype:Quantity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+								Required Quantity.
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="SCAC" type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="SCAC" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The carrier to be used for this line.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ScacAndServiceKey" type="yfctype:Key" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+								Scac And Service Key
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ShipNode" type="yfctype:ShipNode" use="optional">
+                <xsd:annotation yfc:columnName="SHIPNODE_KEY" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>
+                        <div>Shipping node. </div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="UnitOfMeasure" type="yfctype:UOM" use="optional">
+                <xsd:annotation yfc:columnName="UOM" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The unit of measure.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="PossibleAssignments">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="yfc:Assignment"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Assignment">
+        <xsd:annotation>
+            <xsd:documentation>
+                <div>
+									Assignment node gives details on the availability of the inventory.
+								</div>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:PossibleCarriers"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Supplies">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <div>
+										Supplies of the assignment.
+									</div>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded"
+                                minOccurs="0" name="Supply">
+                                <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+										Supply of the assignment.
+									</div>
+                                    </xsd:documentation>
+                                </xsd:annotation>
+                                <xsd:complexType>
+                                    <xsd:attribute
+                                    name="AvailableQuantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Available Quantity. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="FirstShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>First Ship Date. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="LastShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Last Ship Date. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="SafetyQuantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Safety Factor Quantity. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="Track"
+                                    type="yfctype:Flag" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Indicates if inventory is trackable.
+												<br/>Valid Values: <b>
+                                    <code>Y</code>
+                                    </b> or <b>
+                                    <code>N</code>
+                                    </b>
+                                    </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Costs">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <div>
+										Costs of the assignment.
+									</div>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:attribute name="Currency"
+                            type="yfctype:Text-24" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <div>Currency in which cost is maintained. </div>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="HoursOfSupplyCostPerUnit"
+                            type="yfctype:Text-24" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <div>Hours of Supply cost per unit of the item. </div>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="ItemInventoryCostPerUnit"
+                            type="yfctype:Text-24" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <div>Per unit inventory cost of the item at the node. </div>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="NodePriorityCostPerUnit"
+                            type="yfctype:Text-24" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <div>Per unit priority cost of the item at the node. </div>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute
+                            name="NodeShippingCapacityCostPerUnit"
+                            type="yfctype:Text-24" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <div>Per unit shipping capacity cost of the item at the node. </div>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute
+                            name="OutboundShipmentHandlingCostPerUnit"
+                            type="yfctype:Text-24" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <div>Outbound shipment handling cost per unit of the item. </div>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="ShipmentDelayCostPerUnit"
+                            type="yfctype:Text-24" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <div>Shipment Delay cost per unit of the item. </div>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:SubstituteItems"/>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Procurements">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded"
+                                minOccurs="0" name="Procurement">
+                                <xsd:complexType>
+                                    <xsd:all>
+                                    <xsd:element maxOccurs="1"
+                                    minOccurs="0" name="Costs">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+												Costs of the procurement.
+											</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:attribute
+                                    name="Currency"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Currency in which cost is maintained. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="ItemInventoryCostPerUnit"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Per unit inventory cost of the item at the node. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="NodePriorityCostPerUnit"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Per unit priority cost of the item at the node. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="NodeShippingCapacityCostPerUnit"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Per unit shipping capacity cost of the item at the node. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="OutboundShipmentHandlingCostPerUnit"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Outbound shipment handling cost per unit of the item. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    </xsd:complexType>
+                                    </xsd:element>
+                                    <xsd:element maxOccurs="1"
+                                    minOccurs="0" name="Supplies">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+												Supplies of the assignment.
+											</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element
+                                    maxOccurs="unbounded"
+                                    minOccurs="0" name="Supply">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+												Supply of the assignment.
+											</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+
+                                    <xsd:attribute
+                                    name="AvailableQuantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Available Quantity. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+
+                                    <xsd:attribute
+                                    name="FirstShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>First Ship Date. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+
+                                    <xsd:attribute
+                                    name="LastShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Last Ship Date. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+
+                                    <xsd:attribute
+                                    name="SafetyQuantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Safety Factor Quantity. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+
+                                    <xsd:attribute
+                                    name="Track"
+                                    type="yfctype:Flag" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Indicates if inventory is trackable.
+														<br/>Valid Values: <b>
+                                    <code>Y</code>
+                                    </b> or <b>
+                                    <code>N</code>
+                                    </b>
+                                    </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    </xsd:complexType>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                    </xsd:element>
+                                    </xsd:all>
+                                    <xsd:attribute name="AssignmentKey"
+                                    type="yfctype:Key" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Assignment key of the supporting choice.</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="Capacity"
+                                    type="yfctype:Capacity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Capacity for <code>ShipDate</code> at <code>ProcureFromNode</code>.</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="CapacityConsumed"
+                                    type="yfctype:Capacity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Capacity consumed for <code>ShipDate</code> at <code>ProcureFromNode</code>.</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="CapacityUnitOfMeasure"
+                                    type="yfctype:UOM" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>The unit of measure in which inventory resource pool capacity is specified.</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="CapacityUtilization"
+                                    type="yfctype:Percentage" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+											Capacity utilization percentage of the node. 
+										</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="ProcureFromNode"
+                                    type="yfctype:ShipNode" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+											Indicates node from which product is being procured. 
+										</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="Quantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+											Quantity that can be obtained for this assignemnt.
+										</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="ShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+											Shipment Date 
+										</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:all>
+            <xsd:attribute name="AssignmentKey" type="yfctype:Key" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Assignment key of the choice.</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="Capacity" type="yfctype:Capacity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Capacity for <code>ShipDate</code> at <code>ShipNode</code>.</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="CapacityConsumed"
+                type="yfctype:Capacity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Capacity consumed for <code>ShipDate</code> at <code>ShipNode</code>.</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="CapacityUnitOfMeasure"
+                type="yfctype:UOM" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>The unit of measure in which inventory resource pool capacity is specified.</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="CapacityUtilization"
+                type="yfctype:Percentage" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+								Capacity utilization percentage of the node. 
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="CarrierServiceCode"
+                type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="CARRIER_SERVICE_CODE" yfc:tableName="YFS_ORDER_LINE">
+                    <xsd:documentation>The carrier service code.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="DeliveryDate" type="yfctype:TimeStamp" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+							Delivery Date of the assignment
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="Distance" type="yfctype:Number" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+							Distance between the Shipping Address and Node's address measured in <code>MILES</code>. 
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="NodeProcessingDate" type="yfctype:Date" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+									Date on which inventory and node capacity are available at the suggested ShipNode. This is applicable only for <Code>findInventory</Code> api when <code>DetermineCarrierService</code> flag is set to <code>
+                                <b>Y</b>
+                            </code>.
+									<br/> Note: NodeProcessingDate in user exit is shown only when sufficient capacity is available at node for assignment quantity.
+								</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ProcuredQty" type="yfctype:Quantity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+							Product Quantity that can be procured from another node
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ProductAvailDate" type="yfctype:Date" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+							Date on which the product will be available at the suggested ShipNode.
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="Quantity" type="yfctype:Quantity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+							Quantity that can be obtained for this assignemnt.
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="SCAC" type="yfctype:Text-24" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Carrier Code.</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ShipDate" type="yfctype:TimeStamp" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Shipment Date of the assignment</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ShipNode" type="yfctype:ShipNode" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+							Node from which inventory is available
+							</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="PossibleCarriers">
+        <xsd:annotation>
+            <xsd:documentation>
+                <div>
+										Carrier services available for this assignment. You may filter out these in the UE output.
+									</div>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" minOccurs="0" ref="yfc:Carrier"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="Carrier">
+        <xsd:annotation yfc:tableName="YFS_CARRIER_SERVICE">
+            <xsd:documentation>Services provided by a carrier.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:attribute name="CarrierServiceCode"
+                type="yfctype:Text-40" use="optional">
+                <xsd:annotation yfc:columnName="CARRIER_SERVICE_CODE" yfc:tableName="YFS_CARRIER_SERVICE">
+                    <xsd:documentation>A code that identifies a service provided by a carrier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ExpectedDeliveryDate"
+                type="yfctype:TimeStamp" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Expected delivery date. </div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ExpectedShipmentDate"
+                type="yfctype:TimeStamp" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Expected shipment date. </div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="SubstituteItems">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element maxOccurs="1" minOccurs="0" ref="yfc:SubstituteItem"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="SubstituteItem">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Costs">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <div>
+												Costs of the substitute item.
+											</div>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:attribute name="Currency"
+                            type="yfctype:Text-24" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <div>Currency in which cost is maintained. </div>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:attribute name="ItemInventoryCostPerUnit"
+                            type="yfctype:Text-24" use="optional">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                    <div>Per unit inventory cost of the item at the node. </div>
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Procurements">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded"
+                                minOccurs="0" name="Procurement">
+                                <xsd:complexType>
+                                    <xsd:all>
+                                    <xsd:element maxOccurs="1"
+                                    minOccurs="0" name="Costs">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+														Costs of the procurement.
+													</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:attribute
+                                    name="Currency"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Currency in which cost is maintained. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="ItemInventoryCostPerUnit"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Per unit inventory cost of the item at the node. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="NodePriorityCostPerUnit"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Per unit priority cost of the item at the node. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="NodeShippingCapacityCostPerUnit"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Per unit shipping capacity cost of the item at the node. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="OutboundShipmentHandlingCostPerUnit"
+                                    type="yfctype:Text-24" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Outbound shipment handling cost per unit of the item. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    </xsd:complexType>
+                                    </xsd:element>
+                                    <xsd:element maxOccurs="1"
+                                    minOccurs="0" name="Supplies">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+														Supplies of the assignment.
+													</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                    <xsd:sequence>
+                                    <xsd:element
+                                    maxOccurs="unbounded"
+                                    minOccurs="0" name="Supply">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+														Supply of the assignment.
+													</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+
+                                    <xsd:attribute
+                                    name="AvailableQuantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Available Quantity. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+
+                                    <xsd:attribute
+                                    name="FirstShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>First Ship Date. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+
+                                    <xsd:attribute
+                                    name="LastShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Last Ship Date. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+
+                                    <xsd:attribute
+                                    name="SafetyQuantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Safety Factor Quantity. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+
+                                    <xsd:attribute
+                                    name="Track"
+                                    type="yfctype:Flag" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Indicates if inventory is trackable.
+																<br/>Valid Values: <b>
+                                    <code>Y</code>
+                                    </b> or <b>
+                                    <code>N</code>
+                                    </b>
+                                    </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    </xsd:complexType>
+                                    </xsd:element>
+                                    </xsd:sequence>
+                                    </xsd:complexType>
+                                    </xsd:element>
+                                    </xsd:all>
+                                    <xsd:attribute name="AssignmentKey"
+                                    type="yfctype:Key" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Assignment key of the supporting choice.</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="Capacity"
+                                    type="yfctype:Capacity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Capacity for <code>ShipDate</code> at <code>ProcureFromNode</code>.</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="CapacityConsumed"
+                                    type="yfctype:Capacity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Capacity consumed for <code>ShipDate</code> at <code>ProcureFromNode</code>.</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="CapacityUnitOfMeasure"
+                                    type="yfctype:UOM" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>The unit of measure in which inventory resource pool capacity is specified.</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="CapacityUtilization"
+                                    type="yfctype:Percentage" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+													Capacity utilization percentage of the node. 
+												</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute
+                                    name="ProcureFromNode"
+                                    type="yfctype:ShipNode" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+													Indicates node from which product is being procured. 
+												</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="Quantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+													Quantity that can be obtained for this assignemnt.
+												</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="ShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+													Shipment Date 
+												</div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element maxOccurs="1" minOccurs="0" name="Supplies">
+                    <xsd:annotation>
+                        <xsd:documentation>
+                            <div>
+												Supplies of the assignment.
+											</div>
+                        </xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element maxOccurs="unbounded"
+                                minOccurs="0" name="Supply">
+                                <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>
+												Supply of the assignment.
+											</div>
+                                    </xsd:documentation>
+                                </xsd:annotation>
+                                <xsd:complexType>
+                                    <xsd:attribute
+                                    name="AvailableQuantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Available Quantity. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="FirstShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>First Ship Date. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="LastShipDate"
+                                    type="yfctype:TimeStamp" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Last Ship Date. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="SafetyQuantity"
+                                    type="yfctype:Quantity" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Safety Factor Quantity. </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                    <xsd:attribute name="Track"
+                                    type="yfctype:Flag" use="optional">
+                                    <xsd:annotation>
+                                    <xsd:documentation>
+                                    <div>Indicates if inventory is trackable.
+														<br/>Valid Values: <b>
+                                    <code>Y</code>
+                                    </b> or <b>
+                                    <code>N</code>
+                                    </b>
+                                    </div>
+                                    </xsd:documentation>
+                                    </xsd:annotation>
+                                    </xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:all>
+            <xsd:attribute name="AssignmentKey" type="yfctype:Key" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Assignment key of the supporting choice.</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="Capacity" type="yfctype:Capacity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Capacity for <code>ShipDate</code> at <code>ShipNode</code>.</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="CapacityConsumed"
+                type="yfctype:Capacity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>Capacity consumed for <code>ShipDate</code> at <code>ShipNode</code>.</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="CapacityUnitOfMeasure"
+                type="yfctype:UOM" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>The unit of measure in which inventory resource pool capacity is specified.</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="CapacityUtilization"
+                type="yfctype:Percentage" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+											Capacity utilization percentage of the node. 
+										</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ItemID" type="yfctype:ItemID" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+											ItemID of the substitute Item 
+										</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ProcuredQty" type="yfctype:Quantity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+										Product Quantity that can be procured from another node
+										</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ProductClass"
+                type="yfctype:ProductClass" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+											Product class of the substitute Item
+										</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="Quantity" type="yfctype:Quantity" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+										Quantity that can be obtained for this assignment.
+										</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="ShipDate" type="yfctype:TimeStamp" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+										Shipment Date 
+										</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="UOM" type="yfctype:UOM" use="optional">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <div>
+										Unit Of Measure of the substitute Item 
+										</div>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

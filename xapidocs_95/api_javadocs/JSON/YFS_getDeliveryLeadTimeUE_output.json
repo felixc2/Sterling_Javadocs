@@ -1,0 +1,11 @@
+{
+  "DeliveryLeadTime": "",
+  "PossibleCarrierServices": {
+    "CarrierService": {
+      "CarrierServiceCode": "",
+      "DeliveryLeadTime": "",
+      "RejectCarrierService": ""
+    }
+  },
+  "TransitUnitOfMeasure": ""
+}
